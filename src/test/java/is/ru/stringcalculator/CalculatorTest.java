@@ -58,5 +58,18 @@ public class CalculatorTest
 	    assertEquals(msg, ex.getMessage());
 	  }
 	}
+	@Test
+	public void TestStringWithManyNegativeNumberMessages()
+	{
+	  try
+	  {
+		Calculator.add("2,-4,3,-5");
+	  }
+	  catch( final IllegalArgumentException ex )
+	  {
+	    final String msg = "Negatives not allowed: [-4, -5]";
+	    assertEquals(msg, ex.getMessage());
+	  }
+	}
 
 }
