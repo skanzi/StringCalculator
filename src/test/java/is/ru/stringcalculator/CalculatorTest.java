@@ -71,5 +71,10 @@ public class CalculatorTest
 	    assertEquals(msg, ex.getMessage());
 	  }
 	}
+	@Test
+	public void NumberIsSmallerThan1000(){
+			assertEquals(1002, Calculator.add("1000,2"));
+	}
+	
 
 }
