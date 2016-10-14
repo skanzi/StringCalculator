@@ -41,40 +41,12 @@ public class CalculatorTest
 		assertEquals(6, Calculator.add("1\n2,3"));
 	}
 		@Test(expected = IllegalArgumentException.class)
-	public void teststringWithNegativeNumbers(){
-		Calculator.add("1,-1");
+	public void testStringWithNegativeNumbers(){
+    	assertEquals(3, Calculator.add("-1,2"));
+    	assertEquals(2, Calculator.add("1,1"));
+    	assertEquals(2, Calculator.add("2,2,-3,1,-4,-2,3,1"));
 	}
 
-	@Test
-	public void testStringWithNegativeNumberMessages()
-	{
-	  try
-	  {
-		Calculator.add("-1,2");
-	  }
-	  catch( final IllegalArgumentException ex )
-	  {
-	    final String msg = "Negatives not allowed: [-1]";
-	    assertEquals(msg, ex.getMessage());
-	  }
-	}
-	@Test
-	public void TestStringWithManyNegativeNumberMessages()
-	{
-	  try
-	  {
-		Calculator.add("2,-4,3,-5");
-	  }
-	  catch( final IllegalArgumentException ex )
-	  {
-	    final String msg = "Negatives not allowed: [-4, -5]";
-	    assertEquals(msg, ex.getMessage());
-	  }
-	}
-	@Test
-	public void NumberIsSmallerThan1000(){
-			assertEquals(1002, Calculator.add("1000,2"));
-	}
-	
+
 
 }
