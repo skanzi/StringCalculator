@@ -43,10 +43,14 @@ public class CalculatorTest
 		@Test(expected = IllegalArgumentException.class)
 	public void testStringWithNegativeNumbers(){
     	assertEquals(3, Calculator.add("-1,2"));
-    	assertEquals(2, Calculator.add("1,1"));
-    	assertEquals(2, Calculator.add("2,2,-3,1,-4,-2,3,1"));
+    	assertEquals(2, Calculator.add("2,2,-2,1,-3,-5,2,1"));
 	}
-
-
-
+	@Test
+	public void testNumberBiggerThan1000(){
+		assertEquals(2000, Calculator.add("1001,1000,500,500"));
+	}
+	@Test
+    public void testDelimiterNormal() {
+    	assertEquals(3, Calculator.add("//;\n1;2"));
+    }
 }
